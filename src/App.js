@@ -15,7 +15,8 @@ class App extends Component {
     onLinkClick(event) {
         event.preventDefault();
         const object = event.target.id;
-        console.log(event.target.id);
+        var elem = document.getElementById("content");
+        elem.style.opacity = 0;
         if (object === "homeLink"){
             this.setState({
                 show: "home"
@@ -31,8 +32,7 @@ class App extends Component {
                 show: "project"
             });
         }
-        var elem = document.getElementById("content");
-        elem.style.opacity = 0;
+
         this.fadeInComponent();
     }
 
@@ -40,7 +40,6 @@ class App extends Component {
     fadeInComponent() {
         var elem = document.getElementById("content");
         elem.style.opacity = 0;
-        console.log(elem);
         var opacity = 0;
 
         var timer = setInterval(function() {
@@ -63,16 +62,16 @@ class App extends Component {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto"> 
                         <li className="nav-item active">
-                            <a className="nav-link" id="homeLink" href="Home" onClick={this.onLinkClick.bind(this)}>Home</a>
+                            <a className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" id="homeLink" href="Home" onClick={this.onLinkClick.bind(this)}>Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" id="aboutLink" href="About" onClick={this.onLinkClick.bind(this)}>About</a>
+                            <a className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" id="aboutLink" href="About" onClick={this.onLinkClick.bind(this)}>About</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" id="projectLink" href="Projects" onClick={this.onLinkClick.bind(this)}>Projects</a>
+                            <a className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" id="projectLink" href="Projects" onClick={this.onLinkClick.bind(this)}>Projects</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" id="contactLink" href="Contact" onClick={this.onLinkClick.bind(this)}>Contact</a>
+                            <a className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" id="contactLink" href="Contact" onClick={this.onLinkClick.bind(this)}>Contact</a>
                         </li>
                     </ul>
                 </div>

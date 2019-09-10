@@ -1,0 +1,14 @@
+.projects {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-between;
+}
+
+.allProject {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}

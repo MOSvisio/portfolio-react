@@ -1,17 +1,21 @@
 import React from 'react';
+import Project from './Project';
 import './Projects.css';
+import sudoku from './img/sudoku.png';
 
 const Projects = () => {
 
     return (
-        <div>
-            <div className="card">
-                <img src="..." className="card-img-top" alt="..." />
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
-                </div>
+        <div className="allProject">
+            <h1>Projects</h1>
+            <div className="projects">
+                <Project image={sudoku} 
+                    text="Creation of an application who can resolve basic Sudoku grid" 
+                    alt="Sudoku application" 
+                    title="Sudoku resolver" 
+                    lien="https://github.com/MOSvisio/sudoku_resolver" 
+                    techno={["C++", "Qt", "SQLite"]} 
+                />
             </div>
         </div>
     );
