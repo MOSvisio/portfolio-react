@@ -1,0 +1,25 @@
+.home-content {
+    margin: auto;
+    width: 70%;
+    background-color: white;
+    overflow: auto;
+    text-align: center;
+}
+
+.home-content button {
+    margin: auto;
+    height: 50px;
+    width: 150px;
+    background-color: #67C598;
+    color: white;
+    box-shadow: 0;
+    border: 0;
+}
+
+.home-content button:hover {
+    background-color: #75E3AE;
+}
+
+.home-content h3 {
+    color: #989797;
+}
