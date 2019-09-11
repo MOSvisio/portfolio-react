@@ -1,0 +1,13 @@
+.contact-content {
+    margin: auto;
+    width: 70%;
+    background-color: white;
+    overflow: auto;
+}
+
+@media (min-width: 767px){
+    .contact-content form {
+        width: 500px;
+        margin: auto;
+    }
+}

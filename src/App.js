@@ -1,54 +1,65 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Projects from './Pages/Projects'
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Projects from './Pages/Projects';
+import Contact from './Pages/Contact';
 
 class App extends Component {
     constructor() {
         super(); 
         this.state = {
-            show: "home"
+            show: "home",
+            isFinished: true
         }
     };
 
-    onLinkClick(event) {
+    onLinkClick =  (event) => {
         event.preventDefault();
         const object = event.target.id;
-        var elem = document.getElementById("content");
-        elem.style.opacity = 0;
-        if (object === "homeLink"){
+        if (object === "homeLink" && this.state.show !== "home"){
             this.setState({
                 show: "home"
             });
+            this.fadeInComponent();
         }
-        else if (object === "aboutLink"){
+        else if (object === "aboutLink" && this.state.show !== "about"){
             this.setState({
                 show: "about"
             });
+            this.fadeInComponent();
         }
-        else if (object === "projectLink"){
+        else if (object === "projectLink" && this.state.show !== "project"){
             this.setState({
                 show: "project"
             });
+            this.fadeInComponent();
         }
+        else if (object === "contactLink" && this.state.show !== "contact"){
+            this.setState({
+                show: "contact"
+            });
+            this.fadeInComponent();
+        }
+    };
 
-        this.fadeInComponent();
-    }
 
-
-    fadeInComponent() {
+    fadeInComponent = () => {
         var elem = document.getElementById("content");
         elem.style.opacity = 0;
         var opacity = 0;
-
-        var timer = setInterval(function() {
-            if(opacity > 1){
-                clearInterval(timer);
-            }
-            elem.style.opacity = opacity;
-            opacity += 0.1;
-        }, 50);
+        var timer = null
+        if (this.state.isFinished === true)
+        {
+            timer = setInterval(function() {
+                if(opacity > 1){
+                    clearInterval(timer);
+                }
+                elem.style.opacity = opacity;
+                opacity += 0.1;
+            }, 50);
+            this.setState({ isFinished: true });
+        }
         
     }
 
@@ -85,6 +96,9 @@ class App extends Component {
                     }
                     { this.state.show === "project" &&
                         <Projects />
+                    }
+                    { this.state.show === "contact" &&
+                        <Contact />
                     }
                 </div>
 

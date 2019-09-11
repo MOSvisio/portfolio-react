@@ -1,13 +1,32 @@
 .card-img-top {
     width: 100%;
+    max-width: 15rem;
     height: auto;
 }
 
+@media (min-width: 767px){
 .project { 
     width: 15rem;
     margin-top: 20px;
 }
+}
+
+@media (max-width: 767px){
+.project {
+    margin-top: 10px;
+    width: 100%;
+}
+}
 
 .project .card {
     height: 100%;
+}
+
+.project .card img {
+    margin: auto;
+    min-height: 13rem;
+}
+
+.card .btn {
+    width: 100px;
 }
