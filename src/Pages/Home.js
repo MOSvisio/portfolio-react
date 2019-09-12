@@ -10,9 +10,8 @@ class Home extends React.Component {
         this.state = {
             i: 0,
             j: 0,
-            txt: 'Web / Software developer',
-            currentText: '',
-            bar: '|'
+            txt: '<Web - Software developer />',
+            currentText: ''
         }
 
     }
@@ -20,7 +19,6 @@ class Home extends React.Component {
     componentDidMount = () => {
 
         this.typeWriter();
-        this.flashBar();
 
     }
 
@@ -30,10 +28,6 @@ class Home extends React.Component {
             this.timerHandle = 0;
         }
 
-        if (this.timerHandle2) {
-            clearTimeout(this.timerHandle2);
-            this.timerHandle2 = 0;
-        }
     }
 
     typeWriter = () => {
@@ -46,23 +40,12 @@ class Home extends React.Component {
         }
     };
 
-    flashBar = () => {
-        if (this.state.bar === "|")
-            this.setState({
-                bar: " "
-            })
-        else if (this.state.bar === " ")
-        this.setState({
-            bar: "|"
-        })
-        this.timerHandle2 = setTimeout(this.flashBar, speed + 500);
-    }
 
     render() {
         return (
             <div className="home-content">
                 <h1>SCHUTZ Lucas</h1>
-                <h3 id="title">{this.state.currentText} {this.state.bar}</h3>
+                <h3 id="title">{this.state.currentText}</h3>
                 <button onClick={this.props.functionParent}>CONTACT ME</button>
             </div>
         );
