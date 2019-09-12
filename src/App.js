@@ -43,6 +43,18 @@ class App extends Component {
         }
     };
 
+    onContactMeClick = () => {
+        this.setState({
+            show: "contact"
+        });
+        this.fadeInComponent();
+    }
+
+    stopFadeIN = () => {
+        this.setState({
+            isFinished: true
+        });
+    }
 
     fadeInComponent = () => {
         var elem = document.getElementById("content");
@@ -51,6 +63,10 @@ class App extends Component {
         var timer = null
         if (this.state.isFinished === true)
         {
+            this.setState({
+                isFinished: false
+            });
+            setTimeout(this.stopFadeIN, 550);
             timer = setInterval(function() {
                 if(opacity > 1){
                     clearInterval(timer);
@@ -58,9 +74,7 @@ class App extends Component {
                 elem.style.opacity = opacity;
                 opacity += 0.1;
             }, 50);
-            this.setState({ isFinished: true });
         }
-        
     }
 
     render() {
@@ -89,7 +103,7 @@ class App extends Component {
                 </div>
                 <div id="content" className="content">
                     { this.state.show === "home" &&
-                        <Home />
+                        <Home functionParent={this.onContactMeClick}/>
                     }
                     { this.state.show === "about" &&
                         <About />
@@ -98,7 +112,7 @@ class App extends Component {
                         <Projects />
                     }
                     { this.state.show === "contact" &&
-                        <Contact />
+                        <Contact functionParent={this.fadeInComponent} />
                     }
                 </div>
 

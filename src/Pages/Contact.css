@@ -2,7 +2,6 @@
     margin: auto;
     width: 70%;
     background-color: white;
-    overflow: auto;
 }
 
 @media (min-width: 767px){
@@ -11,3 +10,12 @@
         margin: auto;
     }
 }
+
+#emailHelp {
+    color: red;
+}
+
+textarea[name='text'] {
+    resize: none;
+}
+
