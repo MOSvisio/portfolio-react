@@ -5,6 +5,8 @@ import About from './Pages/About';
 import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
 
+
+
 class App extends Component {
     constructor() {
         super(); 
@@ -21,25 +23,21 @@ class App extends Component {
             this.setState({
                 show: "home"
             });
-            this.fadeInComponent();
         }
         else if (object === "aboutLink" && this.state.show !== "about"){
             this.setState({
                 show: "about"
             });
-            this.fadeInComponent();
         }
         else if (object === "projectLink" && this.state.show !== "project"){
             this.setState({
                 show: "project"
             });
-            this.fadeInComponent();
         }
         else if (object === "contactLink" && this.state.show !== "contact"){
             this.setState({
                 show: "contact"
             });
-            this.fadeInComponent();
         }
     };
 
@@ -77,12 +75,16 @@ class App extends Component {
         }
     }
 
+    
+
     render() {
         return (
             <div>
                 <div className="navbar navbar-expand-lg navbar-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span>
+                        <i className="fas fa-bars"></i>
+                    </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto"> 

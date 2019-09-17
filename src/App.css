@@ -32,6 +32,10 @@
   }
 }
 
+.navbar .navbar-toggler .fas .fa-bars {
+  color:white;
+}
+
 .content {
   height: 90vh;
   margin: 0;

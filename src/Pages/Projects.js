@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSpring, animated } from 'react-spring';
 import Project from './Project';
 import './Projects.css';
 import sudoku from './img/sudoku.png';
@@ -6,9 +7,13 @@ import portfolio from './img/portfolio-react.png'
 import banque from './img/banque_de_moselle.png'
 
 const Projects = () => {
+    const props = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+    })
 
     return (
-        <div className="allProject">
+        <animated.div style={props} className="allProject">
             <h1>Projects</h1>
             <div className="projects">
                 <Project image={sudoku} 
@@ -43,7 +48,7 @@ const Projects = () => {
                     techno={["Python"]} 
                 />
             </div>
-        </div>
+        </animated.div>
     );
 };
 

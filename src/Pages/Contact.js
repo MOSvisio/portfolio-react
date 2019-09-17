@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
+import { useSpring, animated } from 'react-spring';
 import './Contact.css'
 
 const Contact = ({functionParent}) => {
+
+    
 
     const [mail, setMail] = useState('');
     const [text, setText] = useState('');
@@ -59,11 +62,16 @@ const Contact = ({functionParent}) => {
         setText('');
     }
 
+    const props = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+      })
+
     return (
         <div className="contact-content">
             { screen ? (
                 
-                <form div="form-mail" onSubmit={onClickSend}>
+                <animated.form style={props} div="form-mail" onSubmit={onClickSend}>
                     <h1>Contact</h1>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
@@ -80,16 +88,16 @@ const Contact = ({functionParent}) => {
                         { !load ? (
                             <button id="send-btn" className="btn btn-primary" disabled>Send Mail</button>
                         ) : (
-                            <div class="spinner-border text-primary" role="status">
-                                <span class="sr-only">Loading...</span>
+                            <div className="spinner-border text-primary" role="status">
+                                <span className="sr-only">Loading...</span>
                             </div>
                         )}
-                </form>
+                </animated.form>
             ) : (   
-                <h1>Thank You !</h1>
+                <animated.h1 style={props}>Thank You !</animated.h1>
             )
             }
-        </div>
+        </div >
     );
 }
 
