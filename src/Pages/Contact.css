@@ -11,6 +11,15 @@
     }
 }
 
+@media (max-width: 767px){
+    .contact-content .btn-primary {
+        margin-bottom: 10px;
+    }
+    .contact-content span {
+        margin-bottom: 10px;
+    }
+}
+
 #emailHelp {
     color: red;
 }

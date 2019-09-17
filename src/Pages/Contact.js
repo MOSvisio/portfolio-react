@@ -67,7 +67,7 @@ const Contact = ({functionParent}) => {
                     <h1>Contact</h1>
                     <div className="form-group">
                         <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input name="mail" onChange={onChangeEmail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                        <input name="mail" onChange={onChangeEmail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address" />
                         { !mailValid &&
                             <small id="emailHelp" className="form-text">This mail address is not valid.</small>
                         }
@@ -75,7 +75,7 @@ const Contact = ({functionParent}) => {
                     </div>
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea2">Enter your message</label>
-                        <textarea onChange={onChangeText} name="text" className="textarea form-control rounded-0" id="exampleFormControlTextarea2" rows="10"></textarea>
+                        <textarea onChange={onChangeText} name="text" className="textarea form-control rounded-0" id="exampleFormControlTextarea2" rows="10" placeholder="Enter your message here"></textarea>
                     </div>
                         { !load ? (
                             <button id="send-btn" className="btn btn-primary" disabled>Send Mail</button>
