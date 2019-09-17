@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spring } from 'react-spring/renderprops';
 import './Home.css'
 
 const speed = 50
@@ -42,12 +43,17 @@ class Home extends React.Component {
 
 
     render() {
+
         return (
-            <div className="home-content">
-                <h1>SCHUTZ Lucas</h1>
-                <h3 id="title">{this.state.currentText}</h3>
-                <button onClick={this.props.functionParent}>CONTACT ME</button>
-            </div>
+            <Spring
+            from={{ opacity: 0 }}
+            to={{ opacity: 1 }}>
+            {props => <div className="home-content" style={props}>
+                    <h1>SCHUTZ Lucas</h1>
+                    <h3 id="title">{this.state.currentText}</h3>
+                    <button onClick={this.props.functionParent}>CONTACT ME</button>
+            </div>}
+            </Spring>
         );
     };
 
