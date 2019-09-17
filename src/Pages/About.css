@@ -26,3 +26,15 @@ h1{
     text-align: justify;
     padding: 5px 10px 0px 10px;
 }
+
+.about-content .icon {
+    text-align: center;
+    font-size: 30px;
+}
+
+.about-content .icon a{
+    color: lightslategray
+}
+.about-content .icon a:hover{
+    color: lightseagreen;
+}
