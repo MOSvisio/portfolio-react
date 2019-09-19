@@ -33,7 +33,9 @@ h1{
 }
 
 .about-content .icon a{
-    color: lightslategray
+    color: lightslategray;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .about-content .icon a:hover{
     color: lightseagreen;

@@ -52,7 +52,7 @@ const Contact = ({functionParent}) => {
             const responseData = await response.json();
             resetForm();
             console.log(responseData);
-            functionParent();
+            fadeInComponent();
             setScreen(false);
         }
     }
@@ -66,6 +66,21 @@ const Contact = ({functionParent}) => {
         opacity: 1,
         from: { opacity: 0 },
       })
+
+    const fadeInComponent = () => {
+        var elem = document.getElementById("content");
+        elem.style.opacity = 0;
+        var opacity = 0;
+        var timer = null
+        timer = setInterval(function() {
+            if(opacity > 1){
+                clearInterval(timer);
+            }
+            elem.style.opacity = opacity;
+            opacity += 0.1;
+        }, 50);
+
+    }
 
     return (
         <div className="contact-content">

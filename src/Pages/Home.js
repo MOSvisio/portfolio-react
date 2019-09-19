@@ -51,7 +51,7 @@ class Home extends React.Component {
             {props => <div className="home-content" style={props}>
                     <h1>SCHUTZ Lucas</h1>
                     <h3 id="title">{this.state.currentText}</h3>
-                    <button onClick={this.props.functionParent}>CONTACT ME</button>
+                    <a class="btn btn-primary" href="/contact" role="button">Contact Me</a>
             </div>}
             </Spring>
         );
