@@ -3,8 +3,9 @@ import { useSpring, animated } from 'react-spring';
 import Project from './Project';
 import './Projects.css';
 import sudoku from './img/sudoku.png';
-import portfolio from './img/portfolio-react.png'
-import banque from './img/banque_de_moselle.png'
+import portfolio from './img/portfolio-react.png';
+import banque from './img/banque_de_moselle.png';
+import othello from './img/othello.png';
 
 const Projects = () => {
     const props = useSpring({
@@ -40,7 +41,7 @@ const Projects = () => {
                     techno={["Java", "Spring", "Hibernate"]} 
                 />
 
-                <Project 
+                <Project image={othello}
                     text="Creation of an Othello game for a student project" 
                     alt="Othello application" 
                     title="Othello game" 

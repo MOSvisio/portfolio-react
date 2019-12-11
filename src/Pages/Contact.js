@@ -4,8 +4,6 @@ import './Contact.css'
 
 const Contact = ({functionParent}) => {
 
-    
-
     const [mail, setMail] = useState('');
     const [text, setText] = useState('');
     const [mailValid, setMailValid] = useState(true);

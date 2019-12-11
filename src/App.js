@@ -6,8 +6,6 @@ import About from './Pages/About';
 import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
 
-
-
 class App extends Component {
     constructor() {
         super(); 

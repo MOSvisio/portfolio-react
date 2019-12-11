@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Spring } from 'react-spring/renderprops';
-import './Home.css'
+import './Home.css';
 
 const speed = 50
 
@@ -18,9 +19,7 @@ class Home extends React.Component {
     }
     
     componentDidMount = () => {
-
         this.typeWriter();
-
     }
 
     componentWillUnmount = () =>  {
@@ -41,18 +40,18 @@ class Home extends React.Component {
         }
     };
 
-
     render() {
-
         return (
             <Spring
-            from={{ opacity: 0 }}
-            to={{ opacity: 1 }}>
-            {props => <div className="home-content" style={props}>
-                    <h1>SCHUTZ Lucas</h1>
-                    <h3 id="title">{this.state.currentText}</h3>
-                    <a class="btn btn-primary" href="/contact" role="button">Contact Me</a>
-            </div>}
+                from={{ opacity: 0 }}
+                to={{ opacity: 1 }}>
+                {props => <div className="home-content" style={props}>
+                        <h1>SCHUTZ Lucas</h1>
+                        <h3 id="title">{this.state.currentText}</h3>
+                        <Link to="/contact">
+                            <a class="btn btn-primary" href="/contact" role="button">Contact Me</a>
+                        </Link>
+                </div>}
             </Spring>
         );
     };
