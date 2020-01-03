@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useSpring, animated } from 'react-spring';
+import ReCAPTCHA from 'react-google-recaptcha'
 import './Contact.css'
 
 const Contact = ({functionParent}) => {
@@ -9,6 +10,8 @@ const Contact = ({functionParent}) => {
     const [mailValid, setMailValid] = useState(true);
     const [screen, setScreen] = useState(true);
     const [load, setLoad] = useState(false);
+    const recaptchaRef = React.createRef();
+    var captchaValue = "";
 
     const mailRegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -31,7 +34,7 @@ const Contact = ({functionParent}) => {
     }
 
     function isFormValid(mailT, textT) {
-        if (mailT.trim() !== '' && textT.trim() !== '')
+        if (mailT.trim() !== '' && textT.trim() !== '' && captchaValue !== "")
         {
             if (mailT.trim().match(mailRegExp) !== null)
                 document.getElementById("send-btn").disabled = false;
@@ -42,11 +45,13 @@ const Contact = ({functionParent}) => {
 
     const onClickSend = async (event) => {
         event.preventDefault();
-        if (mail !== '' && text !== '')
+        const recaptchaValue = recaptchaRef.current.getValue();
+        console.log(recaptchaValue);
+        if (mail !== '' && text !== '' && captchaValue !== "")
         {
             setLoad(true);
             document.getElementById("send-btn").disabled = true;
-            const response = await fetch(`https://mosvisiobackportfolio.herokuapp.com/mail/send?sender=${mail}&text=${text}&callback=?`);
+            const response = await fetch(`https://mosvisiobackportfolio.herokuapp.com/mail/send?sender=${mail}&text=${text}&captcha=${captchaValue}&callback=?`);
             const responseData = await response.json();
             resetForm();
             console.log(responseData);
@@ -80,6 +85,12 @@ const Contact = ({functionParent}) => {
 
     }
 
+    function onCaptchaChange(value) {
+        captchaValue = recaptchaRef.current.getValue();
+        console.log("test");
+        isFormValid(mail, text);
+    }
+
     return (
         <div className="contact-content">
             { screen ? (
@@ -97,6 +108,13 @@ const Contact = ({functionParent}) => {
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea2">Enter your message</label>
                         <textarea onChange={onChangeText} name="text" className="textarea form-control rounded-0" id="exampleFormControlTextarea2" rows="10" placeholder="Enter your message here"></textarea>
+                    </div>
+                    <div className="form-group">
+                        <ReCAPTCHA className="captchaArea"
+                            sitekey="6Ldu_MsUAAAAALNCk9UCvmzcdR6u4Qq7A8eL9iA5" 
+                            onChange={onCaptchaChange} 
+                            ref={recaptchaRef}    
+                        />
                     </div>
                         { !load ? (
                             <button id="send-btn" className="btn btn-primary" disabled>Send Mail</button>

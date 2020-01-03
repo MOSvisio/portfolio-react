@@ -28,3 +28,10 @@ textarea[name='text'] {
     resize: none;
 }
 
+#send-btn {
+    width: 100%;
+}
+
+#captchaArea {
+    width: 100%;
+}
