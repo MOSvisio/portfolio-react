@@ -45,8 +45,6 @@ const Contact = ({functionParent}) => {
 
     const onClickSend = async (event) => {
         event.preventDefault();
-        const recaptchaValue = recaptchaRef.current.getValue();
-        console.log(recaptchaValue);
         if (mail !== '' && text !== '' && captchaValue !== "")
         {
             setLoad(true);
@@ -87,7 +85,6 @@ const Contact = ({functionParent}) => {
 
     function onCaptchaChange(value) {
         captchaValue = recaptchaRef.current.getValue();
-        console.log("test");
         isFormValid(mail, text);
     }
 
@@ -110,11 +107,13 @@ const Contact = ({functionParent}) => {
                         <textarea onChange={onChangeText} name="text" className="textarea form-control rounded-0" id="exampleFormControlTextarea2" rows="10" placeholder="Enter your message here"></textarea>
                     </div>
                     <div className="form-group">
-                        <ReCAPTCHA className="captchaArea"
-                            sitekey="6Ldu_MsUAAAAALNCk9UCvmzcdR6u4Qq7A8eL9iA5" 
-                            onChange={onCaptchaChange} 
-                            ref={recaptchaRef}    
-                        />
+                        <div id="captcha-container">
+                            <ReCAPTCHA className="captchaArea"
+                                sitekey="6Ldu_MsUAAAAALNCk9UCvmzcdR6u4Qq7A8eL9iA5" 
+                                onChange={onCaptchaChange} 
+                                ref={recaptchaRef}    
+                            />
+                        </div>
                     </div>
                         { !load ? (
                             <button id="send-btn" className="btn btn-primary" disabled>Send Mail</button>

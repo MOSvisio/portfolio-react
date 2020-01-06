@@ -32,6 +32,10 @@ textarea[name='text'] {
     width: 100%;
 }
 
-#captchaArea {
-    width: 100%;
+@media (max-width: 767px)
+{
+    iframe {
+        transform:scale(0.77);
+        transform-origin:0 0;
+    }
 }
