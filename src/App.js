@@ -5,6 +5,12 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+library.add(fab, fas)
 
 class App extends Component {
     constructor() {
@@ -12,6 +18,7 @@ class App extends Component {
         this.state = {
         }
     };
+    
 
     render() {
         return (
@@ -20,7 +27,7 @@ class App extends Component {
                 <div className="navbar navbar-expand-lg navbar-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span>
-                        <i className="fas fa-bars"></i>
+                    <FontAwesomeIcon icon={['fas', 'bars']} />
                     </span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
