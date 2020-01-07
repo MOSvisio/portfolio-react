@@ -5,21 +5,22 @@
 }
 
 @media (min-width: 767px){
-.project { 
-    width: 15rem;
-    margin-top: 20px;
-}
+    .project { 
+        width: 18rem;
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 767px){
-.project {
-    margin-top: 10px;
-    width: 100%;
-}
+    .project {
+        margin-top: 10px;
+        width: 100%;
+    }
 }
 
 .project .card {
     height: 100%;
+    padding-top: 20px;
 }
 
 .project .card img {

@@ -18,7 +18,7 @@ const Projects = () => {
             <h1>Projects</h1>
             <div className="projects">
                 <Project image={sudoku} 
-                    text="Creation of an application who can resolve basic Sudoku grid" 
+                    text="Creation of a sudoku game, with a basic AI which can resolse basic sudoku grid" 
                     alt="Sudoku application" 
                     title="Sudoku resolver" 
                     lien="https://github.com/MOSvisio/sudoku_resolver" 
@@ -26,7 +26,7 @@ const Projects = () => {
                 />
                 
                 <Project image={portfolio} 
-                    text="Creation of this portfolio to learn react" 
+                    text="Creation of this portfolio in order to learn React" 
                     alt="portfolio" 
                     title="Portfolio React" 
                     lien="https://github.com/MOSvisio/portfolio-react" 
@@ -34,7 +34,7 @@ const Projects = () => {
                 />
 
                 <Project image={banque} 
-                    text="Student Project. Creation of the server for an order management application for a fictional bank" 
+                    text="Creation of a server for a student project, the goal was to create a simple application which allow user to order something" 
                     alt="Banque application" 
                     title="Banque de moselle" 
                     lien="https://github.com/MOSvisio/Projet_banque_AS_2019" 
@@ -42,7 +42,7 @@ const Projects = () => {
                 />
 
                 <Project image={othello}
-                    text="Creation of an Othello game for a student project" 
+                    text="Creation of an Othello game for a student project. The user can play with another player or against an AI" 
                     alt="Othello application" 
                     title="Othello game" 
                     lien="https://github.com/MOSvisio/Divers/tree/PY_othello" 
