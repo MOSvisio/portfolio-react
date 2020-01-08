@@ -1,33 +1,44 @@
-.card-img-top {
-    width: 100%;
-    max-width: 15rem;
-    height: auto;
+.rootCard {
+    margin: 0;
+    padding: 0;
+    width: 50ch;
+    height: 20ch;
+    user-select: none;
+    overflow: hidden;
 }
 
-@media (min-width: 767px){
-    .project { 
-        width: 18rem;
-        margin-top: 20px;
-    }
+.cardSpring {
+    width: 50ch;
+    height: 20ch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-@media (max-width: 767px){
-    .project {
-        margin-top: 10px;
-        width: 100%;
-    }
+.c {
+    position: absolute;
+    width: 50ch;
+    height: 20ch;
+    cursor: pointer;
+    will-change: transform, opacity;
 }
 
-.project .card {
-    height: 100%;
-    padding-top: 20px;
+.front, .back {
+    background-size: 100%;
 }
 
-.project .card img {
-    margin: auto;
-    min-height: 13rem;
+.back {
+    background-color: grey;
+    color: white;
 }
 
-.card .btn {
-    width: 100px;
+.front {
+    background-color: lightgreen;
+}
+
+.back p {
+    padding: 10%;
+    text-align: justify;
+    
 }
