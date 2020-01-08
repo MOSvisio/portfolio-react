@@ -1,27 +1,28 @@
 .rootCard {
     margin: 0;
     padding: 0;
-    width: 50ch;
-    height: 20ch;
+    width: 25%;
+    min-width: 50ch;
     user-select: none;
-    overflow: hidden;
+    border: black solid 1px; 
 }
 
 .cardSpring {
-    width: 50ch;
-    height: 20ch;
+    width: 100%;
+    height: auto;
+    min-height: 30ch;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    position: relative;
 }
 
 .c {
     position: absolute;
-    width: 50ch;
-    height: 20ch;
-    cursor: pointer;
-    will-change: transform, opacity;
+    width: 100%;
+    height: auto;
+    min-height: 30ch;
+    will-change: opacity;
 }
 
 .front, .back {
@@ -29,16 +30,30 @@
 }
 
 .back {
-    background-color: grey;
+    background-color: rgba(56, 107, 98, 0.7);
     color: white;
+    padding: 5% 5% 0% 5%;
 }
 
 .front {
     background-color: lightgreen;
 }
 
-.back p {
-    padding: 10%;
-    text-align: justify;
+.front h3 {
+    color: #989797;
+    width: auto;
+    margin: auto;
     
+}
+
+.back p {
+    
+    text-align: justify;
+}
+
+.back a {
+    width: 50%;
+    display: block;
+    text-align: center;
+    margin: auto;
 }
