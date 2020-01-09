@@ -7,6 +7,7 @@ import portfolio from './img/portfolio-react.png';
 import banque from './img/banque_de_moselle.png';
 import othello from './img/othello.png';
 import morpion from './img/morpion.jpg'
+import pendulum from './img/pendulum.png'
 
 const Projects = () => {
     const props = useSpring({
@@ -51,10 +52,16 @@ const Projects = () => {
                         techno="Python"
                     />
                     <Project image={morpion}
-                        text="Creation of a morpion game for mobile, in order to learn QML" 
-                        alt="Morpion" 
-                        title="Morpion game" 
+                        text="Creation of a Tic-Tac-Toe for mobile phone, in order to learn QML" 
+                        alt="Tic-Tac-Toe" 
+                        title="Tic-Tac-Toe" 
                         techno="C++, QML"
+                    />
+                    <Project image={pendulum}
+                        text="Creation of a double pendulum in P5JS" 
+                        alt="double pendulum" 
+                        title="double pendulum" 
+                        techno="P5JS"
                     />
                 </div>
             </div>

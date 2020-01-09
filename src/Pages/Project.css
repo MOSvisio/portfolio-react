@@ -1,7 +1,7 @@
 .rootCard {
-    margin: 0;
+    margin: 5px;
     padding: 0;
-    width: 25%;
+    width: 24%;
     min-width: 50ch;
     user-select: none;
     border: black solid 1px; 

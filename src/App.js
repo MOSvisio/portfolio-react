@@ -46,6 +46,7 @@ class App extends Component {
                             <Link to="/contact" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" id="contactLink">Contact</Link>
                         </li>
                     </ul>
+                    <div className="my-2 my-lg-0" style={{color: "white"}}>Status : in apprenticeship<FontAwesomeIcon style={{marginLeft:"10px", color:"red"}} icon={['fas', 'user-tie']} /></div>
                 </div>
                 </div>
                 <div id="content" className="content">
