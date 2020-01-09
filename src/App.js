@@ -25,7 +25,7 @@ class App extends Component {
         return (
             <Router>
             <div>
-                <div className="navbar navbar-expand-lg navbar-light">
+                <div className="navbar sticky-top navbar-expand-lg navbar-light">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span>
                     <FontAwesomeIcon icon={['fas', 'bars']} />
