@@ -20,11 +20,11 @@ const Project = ({ image, alt, title, lien, text, techno }) => {
                 </a.div>
                 <a.div class="c back" style={{opacity}}>
                     <h3>{title}</h3>
-                    <p>{text}</p>
-                    <p><strong>Langage : </strong>{techno}</p>
-                    <div >
+                    <p>{text} <br />
+                    <strong>Langage : </strong>{techno}</p>
+                    <div className="btn-github-container">
                         { lien &&
-                            <a rel="noopener noreferrer" href={lien} className="btn btn-primary " target="_blank">Github</a>
+                            <a rel="noopener noreferrer" href={lien} className="btn-github" target="_blank">Github</a>
                         
                         }
                     </div>

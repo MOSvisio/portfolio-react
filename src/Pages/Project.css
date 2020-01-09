@@ -30,9 +30,16 @@
 }
 
 .back {
-    background-color: rgba(56, 107, 98, 0.7);
+    background-color: rgba(56, 107, 98, 0.8);
     color: white;
+}
+
+.back p, .back h3 {
     padding: 5% 5% 0% 5%;
+}
+
+.back p {
+    margin-bottom: 55px;
 }
 
 .front {
@@ -56,4 +63,26 @@
     display: block;
     text-align: center;
     margin: auto;
+}
+
+.btn-github-container {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-github {
+    border: white solid 2px;
+    text-decoration: none;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+.btn-github:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.3);
 }

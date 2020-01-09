@@ -32,7 +32,7 @@ const Projects = () => {
                         alt="portfolio" 
                         title="Portfolio React" 
                         lien="https://github.com/MOSvisio/portfolio-react" 
-                        techno="HTML CSS React JS"
+                        techno="HTML, CSS, React, JS"
                     />
 
                     <Project image={banque} 
