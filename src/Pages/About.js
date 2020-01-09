@@ -24,7 +24,7 @@ const About = () => {
                 <table>
                     <thead>
                         <tr> 
-                            <th colSpan="1">Programming Skills</th>
+                            <th colSpan="6">Programming Skills</th>
                         </tr>
                     </thead>
                     <tbody>
