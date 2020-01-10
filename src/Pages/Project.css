@@ -1,33 +1,88 @@
-.card-img-top {
+.rootCard {
+    margin: 5px;
+    padding: 0;
+    width: 24%;
+    min-width: 50ch;
+    user-select: none;
+    border: black solid 1px; 
+}
+
+.cardSpring {
     width: 100%;
-    max-width: 15rem;
     height: auto;
+    min-height: 30ch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-@media (min-width: 767px){
-    .project { 
-        width: 18rem;
-        margin-top: 20px;
-    }
+.c {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    min-height: 30ch;
+    will-change: opacity;
 }
 
-@media (max-width: 767px){
-    .project {
-        margin-top: 10px;
-        width: 100%;
-    }
+.front, .back {
+    background-size: 100%;
 }
 
-.project .card {
-    height: 100%;
-    padding-top: 20px;
+.back {
+    background-color: rgba(56, 107, 98, 0.8);
+    color: white;
 }
 
-.project .card img {
+.back p, .back h3 {
+    padding: 5% 5% 0% 5%;
+}
+
+.back p {
+    margin-bottom: 55px;
+}
+
+.front {
+    background-color: lightgreen;
+}
+
+.front h3 {
+    color: #989797;
+    width: auto;
     margin: auto;
-    min-height: 13rem;
+    
 }
 
-.card .btn {
-    width: 100px;
+.back p {
+    
+    text-align: justify;
+}
+
+.back a {
+    width: 50%;
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.btn-github-container {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.btn-github {
+    border: white solid 2px;
+    text-decoration: none;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+}
+
+.btn-github:hover {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.3);
 }
