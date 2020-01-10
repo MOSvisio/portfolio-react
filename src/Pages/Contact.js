@@ -27,7 +27,6 @@ const Contact = ({functionParent}) => {
     }
 
     const onChangeText = (event) => {
-        console.log(captchaValue)
         event.preventDefault();
         const value = event.target.value;
         setText(value);
@@ -52,6 +51,7 @@ const Contact = ({functionParent}) => {
             document.getElementById("send-btn").disabled = true;
             const response = await fetch(`https://mosvisiobackportfolio.herokuapp.com/mail/send?sender=${mail}&text=${text}&captcha=${captchaValue}&callback=?`);
             const responseData = await response.json();
+            console.log(responseData)
             resetForm();
             fadeInComponent();
             setScreen(false);
