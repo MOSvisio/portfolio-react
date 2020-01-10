@@ -11,7 +11,7 @@ const Contact = ({functionParent}) => {
     const [screen, setScreen] = useState(true);
     const [load, setLoad] = useState(false);
     const recaptchaRef = React.createRef();
-    var captchaValue = "";
+    const [captchaValue, setCaptcha] = useState("")
 
     const mailRegExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -27,6 +27,7 @@ const Contact = ({functionParent}) => {
     }
 
     const onChangeText = (event) => {
+        console.log(captchaValue)
         event.preventDefault();
         const value = event.target.value;
         setText(value);
@@ -52,7 +53,6 @@ const Contact = ({functionParent}) => {
             const response = await fetch(`https://mosvisiobackportfolio.herokuapp.com/mail/send?sender=${mail}&text=${text}&captcha=${captchaValue}&callback=?`);
             const responseData = await response.json();
             resetForm();
-            console.log(responseData);
             fadeInComponent();
             setScreen(false);
         }
@@ -85,7 +85,7 @@ const Contact = ({functionParent}) => {
     }
 
     function onCaptchaChange(value) {
-        captchaValue = recaptchaRef.current.getValue();
+        setCaptcha(recaptchaRef.current.getValue());
         isFormValid(mail, text);
     }
 

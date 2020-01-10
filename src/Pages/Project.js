@@ -32,7 +32,6 @@ const Project = ({ image, alt, title, lien, text, techno }) => {
                     <div className="btn-github-container">
                         { lien &&
                             <a rel="noopener noreferrer" href={lien} className="btn-github" target="_blank">Github</a>
-                        
                         }
                     </div>
                 </a.div>
