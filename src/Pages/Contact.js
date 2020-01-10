@@ -66,6 +66,7 @@ const Contact = ({functionParent}) => {
     const props = useSpring({
         opacity: 1,
         from: { opacity: 0 },
+        config: {duration: 500}
       })
 
     const fadeInComponent = () => {
@@ -116,7 +117,7 @@ const Contact = ({functionParent}) => {
                         </div>
                     </div>
                         { !load ? (
-                            <button id="send-btn" className="btn btn-primary" disabled>Send Mail</button>
+                            <button id="send-btn" className="" disabled>Send Mail</button>
                         ) : (
                             <div className="spinner-border text-primary" role="status">
                                 <span className="sr-only">Loading...</span>

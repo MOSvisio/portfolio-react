@@ -6,6 +6,19 @@
     user-select: none;
     border: black solid 1px; 
 }
+@media (max-width: 767px) {
+    .rootCard {
+        min-width: 30ch;
+    }
+
+    .cardSpring {
+        min-height: 15ch;
+    }
+
+    .c {
+        min-height: 15ch;
+    }
+}
 
 .cardSpring {
     width: 100%;
