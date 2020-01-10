@@ -8,7 +8,7 @@ const About = () => {
     const props = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-
+        config: {duration: 500}
     });
 
 
@@ -20,7 +20,7 @@ const About = () => {
                 <a href="https://github.com/MOSvisio" rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={['fab', 'github']} /></a>
             </div>
             <p> 
-                Praesent interdum ullamcorper mauris in hendrerit. Mauris dapibus nisi et augue luctus, at convallis arcu facilisis. Donec sem tellus, tincidunt id ipsum sit amet, consequat semper risus. Donec eu tincidunt eros. Nunc sollicitudin augue sit amet mi ultricies mollis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer dui arcu, finibus vel lacus ut, tristique viverra nulla. Donec a massa imperdiet, porta quam a, semper orci. Mauris tempor in dolor sed auctor. Ut tincidunt, urna sed sollicitudin finibus, diam turpis aliquet mauris, vel tincidunt massa ex et lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ac velit ante. Integer nec eros rutrum ipsum tempus sollicitudin et id odio. 
+                Praesent <strong>strong word </strong>interdum ullamcorper mauris in hendrerit. Mauris dapibus nisi et augue luctus, at convallis arcu facilisis. Donec sem tellus, tincidunt id ipsum sit amet, consequat semper risus. Donec eu tincidunt eros. Nunc sollicitudin augue sit amet mi ultricies mollis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer dui arcu, finibus vel lacus ut, tristique viverra nulla. Donec a massa imperdiet, porta quam a, semper orci. Mauris tempor in dolor sed auctor. Ut tincidunt, urna sed sollicitudin finibus, diam turpis aliquet mauris, vel tincidunt massa ex et lacus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed ac velit ante. Integer nec eros rutrum ipsum tempus sollicitudin et id odio. 
             </p>
             <div>
             <hr />

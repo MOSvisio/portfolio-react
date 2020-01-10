@@ -41,6 +41,10 @@ h1 {
     color: lightseagreen;
 }
 
+.job a {
+    color: lightseagreen;
+}
+
 table {
     width: 90%;
     margin: auto;
