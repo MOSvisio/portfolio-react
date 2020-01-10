@@ -30,6 +30,30 @@ textarea[name='text'] {
 
 #send-btn {
     width: 100%;
+    border: #67C598 solid 2px;
+    color: #67C598;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    display: block;
+    background: white;
+}
+
+#send-btn:disabled {
+    border: rgba(103, 197, 152, 0.4) solid 2px;
+    color: rgba(103, 197, 152, 0.4);
+    background: rgba(211, 211, 211, 0.2);
+}
+
+#send-btn:not(:disabled):hover {
+    background-color: rgba(117, 227, 174, 0.3);
+    text-decoration: none;
+}
+
+#send-btn:disabled:hover {
+    border: rgba(103, 197, 152, 0.4) solid 2px;
+    color: rgba(103, 197, 152, 0.4);
+    background: rgba(211, 211, 211, 0.2);
 }
 
 @media (max-width: 767px)
