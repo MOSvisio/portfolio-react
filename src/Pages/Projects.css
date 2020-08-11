@@ -1,20 +1,13 @@
 .projects {
     width: 80%;
     margin: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .allProject {
     width: 100%;
     height: auto;
-    width: auto;
     margin: auto;
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
 }
 

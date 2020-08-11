@@ -4,10 +4,35 @@
     background-color: white;
 }
 
+.contact-body {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-direction: row;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.map {
+    margin: auto;
+}
+
+.info {
+    display: grid;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.info h3, .info h5 {
+    margin: auto;
+    width: auto;
+}
+
 @media (min-width: 767px){
     .contact-content form {
         width: 500px;
-        margin: auto;
     }
 }
 
@@ -58,9 +83,15 @@ textarea[name='text'] {
 
 @media (max-width: 767px)
 {
-    iframe {
+    iframe:not(.map) {
         transform:scale(0.77);
         transform-origin:0 0;
         margin: auto;
     }
+}
+
+.info hr {
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

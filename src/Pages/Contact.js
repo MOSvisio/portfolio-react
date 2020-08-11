@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useSpring, animated } from 'react-spring';
 import ReCAPTCHA from 'react-google-recaptcha'
-import './Contact.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Contact = ({functionParent}) => {
 
@@ -91,43 +91,65 @@ const Contact = ({functionParent}) => {
 
     return (
         <div className="contact-content">
-            { screen ? (
-                
-                <animated.form style={props} div="form-mail" onSubmit={onClickSend}>
-                    <h1>Contact</h1>
-                    <div className="form-group">
-                        <label htmlFor="exampleInputEmail1">Email address</label>
-                        <input name="mail" onChange={onChangeEmail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address" />
-                        { !mailValid &&
-                            <small id="emailHelp" className="form-text">This mail address is not valid.</small>
-                        }
+            <h1>Contact</h1>
+            <div className="contact-body">
+                { screen ? (
+                    <animated.form style={props} div="form-mail" onSubmit={onClickSend}>
                         
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="exampleFormControlTextarea2">Enter your message</label>
-                        <textarea onChange={onChangeText} name="text" className="textarea form-control rounded-0" id="exampleFormControlTextarea2" rows="10" placeholder="Enter your message here"></textarea>
-                    </div>
-                    <div className="form-group">
-                        <div id="captcha-container">
-                            <ReCAPTCHA className="captchaArea"
-                                sitekey="6Ldu_MsUAAAAALNCk9UCvmzcdR6u4Qq7A8eL9iA5" 
-                                onChange={onCaptchaChange} 
-                                ref={recaptchaRef}    
-                            />
+                        <div className="form-group">
+                            <label htmlFor="exampleInputEmail1">Email address</label>
+                            <input name="mail" onChange={onChangeEmail} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email address" />
+                            { !mailValid &&
+                                <small id="emailHelp" className="form-text">This mail address is not valid.</small>
+                            }
+                            
                         </div>
-                    </div>
-                        { !load ? (
-                            <button id="send-btn" className="" disabled>Send Mail</button>
-                        ) : (
-                            <div className="spinner-border text-primary" role="status">
-                                <span className="sr-only">Loading...</span>
+                        <div className="form-group">
+                            <label htmlFor="exampleFormControlTextarea2">Enter your message</label>
+                            <textarea onChange={onChangeText} name="text" className="textarea form-control rounded-0" id="exampleFormControlTextarea2" rows="10" placeholder="Enter your message here"></textarea>
+                        </div>
+                        <div className="form-group">
+                            <div id="captcha-container">
+                                <ReCAPTCHA className="captchaArea"
+                                    sitekey="6Ldu_MsUAAAAALNCk9UCvmzcdR6u4Qq7A8eL9iA5" 
+                                    onChange={onCaptchaChange} 
+                                    ref={recaptchaRef}    
+                                />
                             </div>
-                        )}
-                </animated.form>
-            ) : (   
-                <animated.h1 style={props}>Thank You !</animated.h1>
-            )
-            }
+                        </div>
+                            { !load ? (
+                                <button id="send-btn" className="" disabled>Send Mail</button>
+                            ) : (
+                                <div className="spinner-border text-primary" role="status">
+                                    <span className="sr-only">Loading...</span>
+                                </div>
+                            )}
+                    </animated.form>
+                ) : (   
+                    <animated.h1 style={props}>Thank You !</animated.h1>
+                )
+                }
+                <div className="info">
+                    <h3>Infos</h3>
+                    
+                    <h5 style={{marginTop: "25px"}}><strong>Mail : </strong>lucas.schutz0954@gmail.com</h5>
+                    <hr />
+                    <h5><strong>Phone number : </strong>+33 647978132</h5>
+                    <hr />
+                    <div className="container-social">
+                        <a rel="noopener noreferrer" href="https://www.instagram.com/lucasschutz57/" target="_blank"><FontAwesomeIcon icon={['fab', 'instagram']} /></a>
+                        <a rel="noopener noreferrer" href="https://twitter.com/Fas_Mosvisio" target="_blank"><FontAwesomeIcon icon={['fab', 'twitter']} /></a>
+                        <a rel="noopener noreferrer" href="https://twitch.tv/mosvisio/" target="_blank"><FontAwesomeIcon icon={['fab', 'twitch']} /></a>
+                        <a rel="noopener noreferrer" href="https://www.linkedin.com/in/lucas-schutz-208883143/" target="_blank"><FontAwesomeIcon icon={['fab', 'linkedin']} /></a>
+                    </div>
+                    <hr />
+                    <h5>7 rue de haute rive</h5>
+                    <h5>57070 Metz</h5>
+                    <hr />
+                    <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.4342982309518!2d6.187390215820539!3d49.09738939180244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794ddffe56ff36b%3A0x5c99bbff97c11fc5!2s7%20Rue%20de%20Haute-Rive%2C%2057070%20Metz!5e0!3m2!1sfr!2sfr!4v1597048411752!5m2!1sfr!2sfr" width="400" height="200" frameborder="0" style={{border: "0"}} allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+
+                </div>
+            </div>
         </div >
     );
 }

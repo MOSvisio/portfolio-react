@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Spring } from 'react-spring/renderprops';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import './Home.css';
 
 const speed = 50
 

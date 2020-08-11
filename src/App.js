@@ -6,6 +6,11 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import './App.css';
+import './Pages/Contact.css'
+import './Pages/Projects.css';
+import './Pages/Home.css';
+import './Pages/Project.css'
+
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Projects from './Pages/Projects';
@@ -46,7 +51,7 @@ class App extends Component {
                             <Link to="/contact" className="nav-link" data-toggle="collapse" data-target=".navbar-collapse.show" id="contactLink">Contact</Link>
                         </li>
                     </ul>
-                    <div className="my-2 my-lg-0" style={{color: "white"}}>Status : in apprenticeship<FontAwesomeIcon style={{marginLeft:"10px", color:"red"}} icon={['fas', 'user-tie']} /></div>
+                    <div className="my-2 my-lg-0" style={{color: "white"}}>Status : Free to hire<FontAwesomeIcon style={{marginLeft:"10px", color:"blue"}} icon={['fas', 'user-tie']} /></div>
                 </div>
                 </div>
                 <div id="content" className="content">

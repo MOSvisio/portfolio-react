@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useSpring, animated as a } from 'react-spring'
-import './Project.css'
 
-const Project = ({ image, alt, title, lien, text, techno }) => {
+const Project = ({ image, alt, title, lien, text, techno, lienLive }) => {
 
     const [flipped, set] = useState(false)
     const [size, setSize] = useState(window.innerWidth)
@@ -21,7 +20,7 @@ const Project = ({ image, alt, title, lien, text, techno }) => {
 
     return (
         <div className="rootCard">
-            <div className="cardSpring" onClick={() => set(state => !state)} onMouseEnter={() => set(state => !state)} onMouseLeave={() => set(state =>!state)}>
+            <div className="cardSpring" onMouseEnter={() => set(state => !state)} onMouseLeave={() => set(state =>!state)}>
                 <a.div className="c front" style={{backgroundImage: 'url(' + image + ')'}}>
                     
                 </a.div>
@@ -32,6 +31,9 @@ const Project = ({ image, alt, title, lien, text, techno }) => {
                     <div className="btn-github-container">
                         { lien &&
                             <a rel="noopener noreferrer" href={lien} className="btn-github" target="_blank">Github</a>
+                        }
+                        { lienLive &&
+                            <a rel="noopener noreferrer" href={lienLive} className="btn-github" target="_blank">Live</a>
                         }
                     </div>
                 </a.div>

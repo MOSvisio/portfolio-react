@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import Project from './Project';
-import './Projects.css';
+
 import sudoku from './img/sudoku.png';
 import portfolio from './img/portfolio-react.png';
 import banque from './img/banque_de_moselle.png';
 import othello from './img/othello.png';
 import morpion from './img/morpion.jpg'
-import pendulum from './img/pendulum.png'
+import pathfinding from './img/Pathfinding.png'
 
 const Projects = () => {
     const props = useSpring({
@@ -34,7 +34,7 @@ const Projects = () => {
                         alt="portfolio" 
                         title="Portfolio React" 
                         lien="https://github.com/MOSvisio/portfolio-react" 
-                        techno="HTML, CSS, React, JS"
+                        techno="HTML, CSS, React.js"
                     />
 
                     <Project image={banque} 
@@ -58,11 +58,13 @@ const Projects = () => {
                         title="Tic-Tac-Toe" 
                         techno="C++, QML"
                     />
-                    <Project image={pendulum}
-                        text="Creation of a double pendulum in P5JS" 
-                        alt="double pendulum" 
-                        title="double pendulum" 
-                        techno="P5JS"
+                    <Project image={pathfinding}
+                        text="Creation of a PathFinding system in React" 
+                        alt="PathFinding" 
+                        title="PathFinding" 
+                        techno="React.js"
+                        lien="https://github.com/MOSvisio/pathfinding-react"
+                        lienLive="https://mosvisio.github.io/pathfinding-react/"
                     />
                 </div>
             </div>
